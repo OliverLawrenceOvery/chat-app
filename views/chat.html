@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Private chat room | Tutorialzine Demo</title>
+	<link type="text/css" rel="stylesheet" href="../css/stylesheet.css" />
+	<link href="http://fonts.googleapis.com/css?family=Open+Sans Condensed:300italic,300,700" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+	<header class="banner">
+		<h1 class="bannertext">
+			<a href="http://localhost:8080/" id="logo">Chat<span>App</span></a>
+		</h1>
+	</header>
+
+	<section class="section">
+		<div class="connected">
+			<img src="../img/unnamed.jpg" id="creatorImage" />
+			<div class="infoConnected">
+				<h2>Login</h2>
+				<br/>
+				<form class="loginForm">
+					<input name="username" type="text" id="yourName" placeholder="Your name" required /><br/>
+					<input name="password" type="text" id="yourEmail" placeholder="Your email address" required /><br/>
+					<input type="submit" id="yourEnter" value="ENTER" /><br/>
+					<input type="button" name="signupbutton" id="signUp" value="Sign-Up" />
+				</form>
+			</div>
+		</div>
+
+		<div class="signup">
+		<img src="../img/unnamed.jpg" id="creatorImage" />
+			<div class="signupConnected">
+				<h2>Sign-Up</h2>
+				<br/>
+				<form class="signupForm">
+					<input name="username" type="text" id="inputName" placeholder="Enter a username" required /><br/>
+					<input name="password" type="text" id="inputEmail" placeholder="Enter an email address" required /><br/>
+					<input type="submit" id="createUser" value="SUBMIT" /><br/>
+					<input type="button" name="return" id="return" value="Return" />
+				</form>
+			</div>
+		</div>
+
+		<div class="personinside">
+			<img src="../img/unnamed.jpg" id="ownerImage" />
+			<div class="infoInside">
+				<h2>Chat with <span class="nickname-chat"></span></h2>
+				<br/>
+				<form class="loginForm">
+					<input type="text" id="hisName" placeholder="Your name" /><br/>
+					<input type="text" id="hisEmail" placeholder="Your email address" /><br/>
+					<input type="submit" id="hisEnter" value="CHAT" />
+				</form>
+			</div>
+		</div>
+
+		<div class="toomanypeople">
+			<h2>Oops, you can not join this chat!</h2>
+			<h5>There are already the maximum number of people in it. Would you like to create a <a title="New Room" href="/create" id="room">new room</a>?</h5>
+		</div>
+		
+		<div class="chatscreen">
+			<div class="chat1">
+				<h3>Chat Info</h3><br>
+				<h5>Users in Room</h5><br>
+				<ul id="usernameList"></ul>
+			</div>
+			<ul class="chats"></ul>
+		</div>
+	</section>
+
+	<footer>
+		<form id="chatform">
+			<input type="text" id="message" placeholder="Type Message Here..."></input>
+			<span class="filebutton">
+					<img id="file" src="../img/paperclip.jpg">
+					<input type="file" id="imageFile" accept="image/*">
+			</span>
+			<input type="submit" id="submit" value="Send"/>
+		</form>
+		<form id="utilityForm">
+				<input type="image" id="toggleMode" src="../img/bulb.png"/>
+		</form>
+	</footer>
+
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="../js/moment.min.js"></script>
+	<script src="/socket.io/socket.io.js"></script>
+	<script src="../js/chat.js"></script>
+</body>
+
+</html>
